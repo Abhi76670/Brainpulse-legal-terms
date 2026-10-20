@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06132d">
+  <meta name="description" content="Choose an app to view its privacy policy, terms and support options from Vexorali Software.">
+  <title>Vexorali Software — App & Support Center</title>
+  <link rel="icon" type="image/png" href="assets/site-favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="portal">
+    <header class="portal-header">
+      <div class="portal-brand">
+        <img src="assets/site-favicon.png" alt="Vexorali Software logo" width="52" height="52">
+        <div><strong>Vexorali Software</strong><span>App & Support Center</span></div>
+      </div>
+      <a class="support-link" href="mailto:support@vexoralisoftware.in">Contact support</a>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">ONE PLACE FOR ALL OUR APPS</p>
+      <h1>Welcome. What would you like to open?</h1>
+      <p class="hero-copy">Choose an app to find its privacy policy, terms and account support. More apps can be added here as they become available.</p>
+    </section>
+
+    <section class="app-picker card" aria-labelledby="app-heading">
+      <h2 id="app-heading">Select app</h2>
+      <p class="picker-copy muted">Tap an app to view its support and legal pages.</p>
+
+      <button type="button" id="brainPulseChoice" class="app-choice" aria-pressed="false" aria-controls="appDetails">
+        <img class="app-choice-logo" src="assets/app-logo.png" alt="Original Brain Pulse app logo" width="120" height="120">
+        <span class="app-choice-text"><strong>Brain Pulse</strong></span>
+        <span class="choice-indicator" aria-hidden="true">›</span>
+      </button>
+
+      <div id="appDetails" class="app-details" aria-live="polite" hidden>
+        <div class="app-heading-row">
+          <img class="app-icon-image" src="assets/app-logo.png" alt="Brain Pulse app logo" width="54" height="54">
+          <div><h3>Brain Pulse</h3><p class="muted">Rewards app · Privacy, terms and account deletion</p></div>
+        </div>
+        <div class="link-grid">
+          <a class="resource-link" href="privacy.html"><strong>Privacy Policy</strong><span>Learn how app data is handled <b>→</b></span></a>
+          <a class="resource-link" href="terms.html"><strong>Terms &amp; Conditions</strong><span>Read the rules for using the app <b>→</b></span></a>
+          <a class="resource-link" href="delete-account.html"><strong>Account Deletion</strong><span>Verify your email and request deletion <b>→</b></span></a>
+        </div>
+      </div>
+      <p class="small muted future-app-note">Only currently available apps appear here. To add another app in the future, add its logo, app choice, and matching resource links.</p>
+      <p id="selectHint" class="small muted" role="status">Tap the Brain Pulse card above to view its resources.</p>
+    </section>
+
+    <section class="support-panel">
+      <div><h2>Need help?</h2><p class="muted">For support with any listed app, email our support team.</p></div>
+      <a class="primary-link" href="mailto:support@vexoralisoftware.in">support@vexoralisoftware.in <span>↗</span></a>
+    </section>
+
+    <footer class="portal-footer">
+      <span>© 2026 Vexorali Software</span>
+      <span>Support: <a href="mailto:support@vexoralisoftware.in">support@vexoralisoftware.in</a></span>
+    </footer>
+  </main>
+<script>
+const brainPulseChoice = document.getElementById('brainPulseChoice');
+const appDetails = document.getElementById('appDetails');
+const selectHint = document.getElementById('selectHint');
+brainPulseChoice.addEventListener('click', () => {
+  window.location.href = 'brain-pulse.html';
+});
+</script>
+</body>
+</html>
