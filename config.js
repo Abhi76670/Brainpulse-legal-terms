@@ -1,2 +1,2 @@
 window.BRAINPULSE_SUPABASE_URL = 'https://ckzjywglsmcrshbzetpy.supabase.co';
-window.BRAINPULSE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNremp5d2dsc21jcnNoYnpldHB5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY2MjI5OTQsImV4cCI6MjEwMjE5ODk5NH0.jWdeZVZc629T2knYm-iFQRdhTigFYOQ4QI_qCeZZzZ4';
+window.BRAINPULSE_SUPABASE_KEY = 'sb_publishable_qqzhT5hJl4mCNtmbu2jt-Q_rpNh2Y4a';
