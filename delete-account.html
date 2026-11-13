@@ -12,7 +12,7 @@
 <div id="status" class="status" role="alert"></div></section><footer class="footer">© 2026 Brain Pulse · <a href="mailto:support@vexoralisoftware.in">support@vexoralisoftware.in</a></footer></main>
 <script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const sb=supabase.createClient(window.BRAINPULSE_SUPABASE_URL,window.BRAINPULSE_SUPABASE_ANON_KEY);
+const sb=supabase.createClient(window.BRAINPULSE_SUPABASE_URL,window.BRAINPULSE_SUPABASE_KEY);
 const emailStep=document.getElementById('emailStep'),otpStep=document.getElementById('otpStep'),confirmStep=document.getElementById('confirmStep'),successBox=document.getElementById('successBox'),statusBox=document.getElementById('status');
 const sendBtn=document.getElementById('sendBtn'),resendBtn=document.getElementById('resendBtn');
 let verifiedUser=null;let currentEmail='';let resendSeconds=0;let resendTimer=null;
@@ -49,8 +49,9 @@ async function sendOtp(isResend=false){
   btn.disabled=true;btn.textContent='Sending…';showStatus('');
   const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});
   if(error){
+    console.error('sendOtp error:',error);
     btn.disabled=false;btn.textContent=isResend?(resendSeconds>0?`Resend OTP in ${resendSeconds}s`:'Resend OTP'):'Send OTP';
-    showStatus('Could not send OTP. Please try again later.');
+    showStatus(error.status===429||/rate limit|too many/i.test(error.message||'')?'Too many requests. Please wait a minute and try again.':'Could not send OTP. Please check the email and try again later.');
     return;
   }
   document.getElementById('emailShown').textContent=email;

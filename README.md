@@ -20,7 +20,7 @@ The Brain Pulse Supabase recovery/password-reset email template must display the
 Run the included migration in the Brain Pulse Supabase project before using the deletion form:
 `supabase db push`
 
-Only the public Supabase URL and anon key are included in `config.js`. Never put a service-role key, JWT secret, or personal access token in this website.
+Only the public Supabase URL and the **publishable key** (sb_publishable_...) are included in `config.js`. The old anon/JWT key is disabled. Never put a secret key, service-role key, JWT secret, or personal access token in this website.
 
 Support: support@vexoralisoftware.in
 
